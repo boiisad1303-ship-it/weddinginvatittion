@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libonig-dev \
+        libpq-dev \
         libpng-dev \
         libxml2-dev \
         libzip-dev \
@@ -20,6 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         opcache \
         pcntl \
         pdo_mysql \
+        pdo_pgsql \
+        pgsql \
         zip \
     && rm -rf /var/lib/apt/lists/*
 
@@ -53,6 +56,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libfreetype6 \
         libjpeg62-turbo \
         libonig5 \
+        libpq5 \
         libpng16-16 \
         libxml2 \
         libzip4 \
