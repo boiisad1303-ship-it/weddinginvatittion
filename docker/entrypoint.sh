@@ -13,6 +13,14 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
+if [ "${RUN_DB_MIGRATIONS:-true}" = "true" ]; then
+    php artisan migrate --force
+fi
+
+if [ "${RUN_DB_SEEDER:-false}" = "true" ]; then
+    php artisan db:seed --force
+fi
+
 envsubst '${PORT}' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf
 nginx -t
 

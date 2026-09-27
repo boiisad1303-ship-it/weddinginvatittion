@@ -48,6 +48,7 @@ FROM php:8.3-fpm-bookworm AS runtime
 
 ENV APP_ENV=production \
     APP_DEBUG=false \
+    DB_CONNECTION=pgsql \
     LOG_CHANNEL=stderr
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
